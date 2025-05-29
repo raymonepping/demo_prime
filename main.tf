@@ -36,7 +36,7 @@ module "compute" {
   instance_type     = "t3.micro"
 
   subnet_id         = data.terraform_remote_state.network.outputs.subnet_id
-  security_group_id = data.terraform_remote_state.network.outputs.sg_id
+  security_group_id = data.terraform_remote_state.network.outputs.security_group_id
   name              = "prime-vm"
   key_name          = var.key_name
   public_key        = var.public_key
