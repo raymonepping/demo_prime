@@ -19,10 +19,7 @@ variable "ami_id" {
   type        = string
 }
 
-variable "subnet_id" {}
-variable "security_group_id" {}
-variable "name" {}
+
 variable "key_name" {}
 variable "public_key" {}
-variable "volume_size" {}
-variable "volume_type" {}
+
