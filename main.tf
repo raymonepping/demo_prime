@@ -1,34 +1,3 @@
-provider "aws" {
-  region = var.region
-}
-
-terraform {
-  cloud {
-    organization = "optimus_prime"
-
-    workspaces {
-      name = "demo_prime"
-    }
-  }
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.98.0"
-    }
-  }
-}
-
-data "terraform_remote_state" "network" {
-  backend = "remote"
-  config = {
-    organization = "optimus_prime"
-    workspaces = {
-      name = "demo_optimus"
-    }
-  }
-}
-
 # This module creates EC2 instances based on the selected OS and configuration.
 module "compute" {
   source            = "app.terraform.io/optimus_prime/optimus/aws//modules/compute"
